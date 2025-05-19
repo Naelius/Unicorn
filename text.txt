@@ -1,0 +1,1 @@
+print("Hallo und Willkommen im Regenbogenland!")
