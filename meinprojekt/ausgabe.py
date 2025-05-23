@@ -1,13 +1,13 @@
-Name = "Max Mustermann"
-Alter = "30"
-Geschlecht = "männlich"
-Größe = "1,80m"
-Gewicht = "75kg"
-Augenfarbe = "braun"
-Haarfarbe = "schwarz"
-Beruf = "Softwareentwickler"
-Hobby = "Lesen"
-Charaktereigenschaften = "freundlich"
+name = "Max Mustermann"
+alter = "30"
+geschlecht = "männlich"
+größe = "1,80m"
+gewicht = "75kg"
+augenfarbe = "braun"
+haarfarbe = "schwarz"
+beruf = "Softwareentwickler"
+hobby = "Lesen"
+charaktereigenschaften = "freundlich"
 
 
 satz = (
@@ -19,9 +19,9 @@ satz = (
 print(satz)
 
 
-# DnD-Charakter-Datensatz
+## DnD-Charakter-Datensatz
 name = "Elionis Silbermähne"
-alter = 42
+alter = "42"
 geschlecht = "männlich"
 größe = "2,10 m"
 gewicht = "130 kg"
