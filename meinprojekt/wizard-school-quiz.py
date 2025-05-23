@@ -39,7 +39,4 @@ def run_quiz():
     print(" Danke fürs spielen! 👋")
 
 
-
-
-
 run_quiz()
