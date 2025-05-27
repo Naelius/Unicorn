@@ -1,0 +1,71 @@
+import random
+import tkinter as tk
+from tkinter import messagebox
+
+class RateSpielGUI:
+    def __init__(self, master):
+        self.master = master
+        self.master.title("🎯 Zahlenraten-Spiel")
+        self.master.config(bg="#1497d4")
+
+        self.randomnumber = random.randint(1, 100)
+        self.attempts = 0
+
+        self.label = tk.Label(
+            master,
+            text="Kannst du meine Zahl zwischen 1 und 100 erraten?",
+            font=("Arial", 14),
+            bg="#1497d4",
+            fg="#000000"
+        )
+        self.label.pack(pady=15)
+
+        self.entry = tk.Entry(master, font=("Arial", 12), width=10, justify="center")
+        self.entry.pack()
+
+        self.button = tk.Button(
+            master,
+            text="Tipp abgeben",
+            font=("Arial", 12, "bold"),
+            bg="#E7770F",
+            fg="white",
+            activebackground="#45a049",
+            command=self.überprüfe_tipp
+        )
+        self.button.pack(pady=10)
+
+        self.feedback_label = tk.Label(master, text="", font=("Arial", 14), bg="#1497d4", fg="#000000")
+        self.feedback_label.pack()
+
+    def überprüfe_tipp(self):
+        eingabe = self.entry.get()
+
+        try:
+            guess = int(eingabe)
+        except ValueError:
+            self.feedback_label.config(text="Bitte nur eine Zahl eingeben")
+            return
+
+        self.attempts += 1
+
+        if guess < 1 or guess > 100:
+            self.feedback_label.config(text="Die Zahl muss zwischen 1 und 100 liegen")
+        elif guess < self.randomnumber:
+            self.feedback_label.config(text="Nein, zu niedrig")
+        elif guess > self.randomnumber:
+            self.feedback_label.config(text="Nein, zu hoch")
+        else:
+            messagebox.showinfo("🎉 Erfolg!", f"Richtig! Nach {self.attempts} Versuchen.")
+            self.neustart()
+
+    def neustart(self):
+        self.randomnumber = random.randint(1, 100)
+        self.attempts = 0
+        self.entry.delete(0, tk.END)
+        self.feedback_label.config(text="Neues Spiel gestartet!")
+
+# GUI starten
+root = tk.Tk()
+spiel = RateSpielGUI(root)
+root.geometry("400x250")  # Fenstergröße
+root.mainloop()
