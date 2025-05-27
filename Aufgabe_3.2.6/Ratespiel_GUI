@@ -5,7 +5,7 @@ from tkinter import messagebox
 class RateSpielGUI:
     def __init__(self, master):
         self.master = master
-        self.master.title("🎯 Zahlenraten-Spiel")
+        self.master.title("Zahlenraten-Spiel")
         self.master.config(bg="#1497d4")
 
         self.randomnumber = random.randint(1, 100)
@@ -27,14 +27,20 @@ class RateSpielGUI:
             master,
             text="Tipp abgeben",
             font=("Arial", 12, "bold"),
-            bg="#E7770F",
+            bg="#FF6600",
             fg="white",
             activebackground="#45a049",
             command=self.überprüfe_tipp
         )
         self.button.pack(pady=10)
 
-        self.feedback_label = tk.Label(master, text="", font=("Arial", 14), bg="#1497d4", fg="#000000")
+        self.feedback_label = tk.Label(
+            master, 
+            text="", 
+            font=("Arial", 14), 
+            bg="#1497d4", 
+            fg="#000000"
+            )
         self.feedback_label.pack()
 
     def überprüfe_tipp(self):
@@ -67,5 +73,5 @@ class RateSpielGUI:
 # GUI starten
 root = tk.Tk()
 spiel = RateSpielGUI(root)
-root.geometry("400x250")  # Fenstergröße
+root.geometry("500x200")  # Fenstergröße
 root.mainloop()
