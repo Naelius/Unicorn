@@ -29,9 +29,12 @@ else:
 
     sortiert = sorted(zahlen)
 
-    print("\nListe")
-    print("Eingetragene Zahlen", zahlen)
-    print("Größte Zahl", groesste)
-    print("Kleinste Zahl", kleinste)
-    print("Durchschnitt", durchschnitt)
-    print("Sortierte Liste", sortiert)
+    print("\n" + "="*50)
+    print("{:^50}".format("Liste"))
+    print("="*50)
+    print("{:<25} {:>25}".format("Eingetragene Zahlen", str(zahlen)))
+    print("{:<25} {:>25}".format("Größte Zahl", groesste))
+    print("{:<25} {:>25}".format("Kleinste Zahl", kleinste))
+    print("{:<25} {:>25}".format("Durchschnitt", durchschnitt))
+    print("{:<25} {:>25}".format("Sortierte Liste", str(sortiert)))
+    print("="*50)
