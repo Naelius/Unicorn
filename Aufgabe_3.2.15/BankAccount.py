@@ -29,14 +29,6 @@ class BankAccount:
     def zeige_kontostand(self):
         print(f"Aktueller Kontostand: {self.kontostand:.2f} €")
 
-    def zinsen_berechnen(self, zinssatz):
-        if self.kontostand > 0:
-            zinsen = self.kontostand * (zinssatz / 100)
-            self.kontostand += zinsen
-            print(f"Zinsen(7.2) in Höhe von {zinsen:.2f} € gutgeschrieben.")
-        else:
-            print("Keine Zinsen berechnet, da der Kontostand nicht positiv ist.")
-
     def __str__(self):
         return f"Konto von {self.kontoinhaber} – Kontostand: {self.kontostand:.2f} €"
 
